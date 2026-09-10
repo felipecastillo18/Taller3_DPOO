@@ -1,3 +1,4 @@
+package uniandes.dpoo.aerolinea.modelo.cliente;
 
 public class ClienteNatural extends Cliente{
 	public String NATURAL = "Natural";
@@ -13,7 +14,7 @@ public class ClienteNatural extends Cliente{
 	}
 	
 	@Override
-	public string getTipoCliente() {
+	public String getTipoCliente() {
 		return NATURAL;
 	}
 

@@ -33,8 +33,9 @@ public class ClienteCorporativo extends Cliente {
 	}
 	
 	@Override
-	public String getIdentificacor() {
-		return getNombreEmpresa();
+	public String getIdentificador() {
+	    return getNombreEmpresa();
+	}
 	}
 	
 	
