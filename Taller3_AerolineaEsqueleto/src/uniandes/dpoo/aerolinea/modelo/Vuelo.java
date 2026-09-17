@@ -6,6 +6,8 @@ import uniandes.dpoo.aerolinea.tiquetes.Tiquete;
 import uniandes.dpoo.aerolinea.tiquetes.GeneradorTiquetes;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Vuelo {
 	
@@ -33,8 +35,12 @@ public class Vuelo {
 		return avion;
 	}
 	
-	public Map<String, Tiquete> getTiquetes() {
-		return tiquetes.values();
+	public Collection<Tiquete> getTiquetes() {
+	    return tiquetes.values();
+	}
+
+	public void agregarTiquete(Tiquete tiquete) {
+	    tiquetes.put(tiquete.getCodigo(), tiquete);
 	}
 	
 	public int venderTiquetes(Cliente cliente, CalculadoraTarifas calculadora, int cantidad) {

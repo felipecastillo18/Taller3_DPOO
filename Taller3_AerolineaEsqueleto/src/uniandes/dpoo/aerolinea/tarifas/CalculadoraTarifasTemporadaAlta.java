@@ -1,3 +1,8 @@
+package uniandes.dpoo.aerolinea.tarifas;
+
+import uniandes.dpoo.aerolinea.modelo.Ruta;
+import uniandes.dpoo.aerolinea.modelo.Vuelo;
+import uniandes.dpoo.aerolinea.modelo.cliente.Cliente;
 
 public class CalculadoraTarifasTemporadaAlta extends CalculadoraTarifas {
 
