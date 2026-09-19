@@ -63,7 +63,9 @@ public class ClienteCorporativo extends Cliente {
 	public JSONObject salvarEnJSON() {
 		JSONObject jobject = new JSONObject();
 		jobject.put("nombreEmpresa", this.nombreEmpresa);
-		jobject.put("tamanoEmpresa", this.tamanoEmpresa);
+		jobject.put("tamanoEmpresa", this.tamanoEmpresa); 
+		// Acá podría haber un problema, porque la llave "tipo" no coincide con la llave "tipoCliente" que usa 
+		// PersistenciaTiquetesJson cuando se carga, así que un archivo guardado con este método no se podría volver a cargar.
 		jobject.put("tipo", CORPORATIVO);
 		return jobject;
 	}
