@@ -17,6 +17,7 @@ public class Tiquete {
 		this.vuelo = vuelo;
 		this.clienteComprador = clienteComprador;
 		this.tarifa = tarifa;
+		clienteComprador.agregarTiquete(this);
 	}
 	
 	public Cliente getCliente() {

@@ -1,0 +1,40 @@
+{
+	"aviones": [
+		{
+			"nombre": "Airbus A320",
+			"capacidad": 180
+		}
+	],
+	"aeropuertos": [
+		{
+			"codigo": "BOG",
+			"nombre": "El Dorado",
+			"nombreCiudad": "Bogotá",
+			"latitud": 4.7016,
+			"longitud": -74.1469
+		},
+		{
+			"codigo": "MDE",
+			"nombre": "José María Córdova",
+			"nombreCiudad": "Medellín",
+			"latitud": 6.1645,
+			"longitud": -75.4231
+		}
+	],
+	"rutas": [
+		{
+			"codigoRuta": "4558",
+			"origen": "BOG",
+			"destino": "MDE",
+			"horaSalida": "0730",
+			"horaLlegada": "0830"
+		}
+	],
+	"vuelos": [
+		{
+			"codigoRuta": "4558",
+			"fecha": "2024-11-05",
+			"avion": "Airbus A320"
+		}
+	]
+}
