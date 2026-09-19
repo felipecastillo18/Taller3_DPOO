@@ -7,10 +7,10 @@ import org.json.JSONObject;
  * empresas
  */
 public class ClienteCorporativo extends Cliente {
-	public String CORPORATIVO = "Corporativo";
-	public int GRANDE = 1;
-	public int MEDIANA = 2;
-	public int PEQUENA = 3;
+	public static final String CORPORATIVO = "Corporativo";
+	public static final int GRANDE = 1;
+	public static final int MEDIANA = 2;
+	public static final int PEQUENA = 3;
 	private String nombreEmpresa;
 	private int tamanoEmpresa;
 

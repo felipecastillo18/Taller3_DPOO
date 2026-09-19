@@ -18,9 +18,13 @@ public class Aeropuerto
     private double latitud;
     private double longitud;
     private static Set<String> codigosUtilizados = new HashSet<String>();
-    private static int RADIO_TERRESTRE = 6371;
-    
-    public Aeropuerto(String nombre, String codigo, String nombreCiudad, double latitud, double longitud) {
+    private static final int RADIO_TERRESTRE = 6371;
+
+    public Aeropuerto(String nombre, String codigo, String nombreCiudad, double latitud, double longitud) throws AeropuertoDuplicadoException {
+    	if (codigosUtilizados.contains(codigo)) {
+    		throw new AeropuertoDuplicadoException(codigo);
+    	}
+    	codigosUtilizados.add(codigo);
     	this.nombre = nombre;
     	this.codigo = codigo;
     	this.nombreCiudad = nombreCiudad;

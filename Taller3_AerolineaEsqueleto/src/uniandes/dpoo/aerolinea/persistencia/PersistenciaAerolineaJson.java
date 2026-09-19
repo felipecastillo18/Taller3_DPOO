@@ -10,6 +10,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import uniandes.dpoo.aerolinea.exceptions.AeropuertoDuplicadoException;
 import uniandes.dpoo.aerolinea.exceptions.InformacionInconsistenteException;
 import uniandes.dpoo.aerolinea.modelo.Aerolinea;
 import uniandes.dpoo.aerolinea.modelo.Aeropuerto;
@@ -39,10 +40,14 @@ public class PersistenciaAerolineaJson implements IPersistenciaAerolinea {
 		JSONArray jAeropuertos = raiz.getJSONArray("aeropuertos");
 		for (int i = 0; i < jAeropuertos.length(); i++) {
 			JSONObject jAeropuerto = jAeropuertos.getJSONObject(i);
-			Aeropuerto aeropuerto = new Aeropuerto(jAeropuerto.getString("nombre"), jAeropuerto.getString("codigo"),
-					jAeropuerto.getString("nombreCiudad"), jAeropuerto.getDouble("latitud"),
-					jAeropuerto.getDouble("longitud"));
-			aeropuertos.put(aeropuerto.getCodigo(), aeropuerto);
+			try {
+				Aeropuerto aeropuerto = new Aeropuerto(jAeropuerto.getString("nombre"), jAeropuerto.getString("codigo"),
+						jAeropuerto.getString("nombreCiudad"), jAeropuerto.getDouble("latitud"),
+						jAeropuerto.getDouble("longitud"));
+				aeropuertos.put(aeropuerto.getCodigo(), aeropuerto);
+			} catch (AeropuertoDuplicadoException e) {
+				throw new InformacionInconsistenteException(e.getMessage());
+			}
 		}
 
 		// Rutas
