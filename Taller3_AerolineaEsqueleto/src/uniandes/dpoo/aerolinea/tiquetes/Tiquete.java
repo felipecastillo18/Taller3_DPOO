@@ -9,19 +9,19 @@ public class Tiquete {
 	private int tarifa;
 	private boolean usado;
 	private Vuelo vuelo;
-	private Cliente clienteComprador;
+	private Cliente cliente;
 	
 	public Tiquete(String codigo, Vuelo vuelo, Cliente clienteComprador, int tarifa) {
 		this.usado = false;
 		this.codigo = codigo;
 		this.vuelo = vuelo;
-		this.clienteComprador = clienteComprador;
+		this.cliente = clienteComprador;
 		this.tarifa = tarifa;
 		clienteComprador.agregarTiquete(this);
 	}
 	
 	public Cliente getCliente() {
-		return clienteComprador;
+		return cliente;
 	}
 	
 	public Vuelo getVuelo() {
